@@ -27,37 +27,47 @@ else:
     questions=1
 print("You will have to answer " + str(questions) + " questions about FRC team " + str(teams[team]))
 answer1=input("What is team " + str(teams[team]) +"'s team name?")
+score=0
 if(answer1==question1[team]):
     print("Correct!")
+    score+=1
     if(questions==1):
         print("You Won!!!")
     else:
         answer2=input("When did " + str(teams[team]) +" last win the world championship?")
         if(answer2==question2[team]):
             print("Correct!")
+            score+=1
             if(questions==2):
                 print("You Won!!!")
             else:
                 answer3=input("How many blue banners did " + str(teams[team]) +" get this last season?")
                 if(answer3==question3[team]):
+                    score+=1
                     print("Correct!")
                     if(questions==3):
                         print("You Won!!!")
                     else:
                         answer4=input("Where is " + str(teams[team]) +" from?(what state, or country if outside of us)")
                         if(answer4==question4[team]):
+                            score+=1
                             print("Correct!")
                             if(questions==4):
                                 print("You Won!!!")
                             else:
                                 answer5=input("did team " + str(teams[team]) +" have a turret on their robot this year?")
                                 if(answer5==question5[team]):
-                                    print("Correct!, You win!!!")
+                                    score+=1
+                                    print("Correct!, You win!!!, You got 5/5 Correct")
                         else:
                             print("incorrect, the answer was " + question4[team])
-                else:
+                            print("you got " +str(score) +"/4 correct ")
+                else:       
                     print("incorrect, the answer was " + question3[team])
+                    print("you got " +str(score) +"/3 correct ")
         else:
             print("incorrect, the answer was " + question2[team])
+            print("you got " + str(score) +"/2 correct ")
 else:
     print("incorrect, the answer was " + question1[team])
+    print("you got " + str(score) +"/1 correct ")
